@@ -136,6 +136,18 @@ function App() {
                     </a>
                   ))}
                 </div>
+                <div>
+                  <div className="mt-2">
+                    <a
+                      className=" text-white cursor-pointer border-b-2 border-dotted flex items-center w-fit"
+                      target="_blank"
+                      href="https://okekedivine.vercel.app/"
+                    >
+                      Portfolio 1.0
+                      <i className="fa fa-external-link pl-2 text-[0.6rem]"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
