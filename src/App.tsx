@@ -31,8 +31,8 @@ function App() {
 
   return (
     <div>
-      <div className="flex flex-wrap w-full p-6 md:p-[100px]">
-        <div className="w-full md:w-1/2 sticky md:top-0">
+      <div className="flex flex-wrap w-full p-6 md:p-[100px] md:flex md:flex-wrap md:justify-between">
+        <div className="w-full md:w-1/2 md:block  pb-2 md:pb-0">
           <div className="md:w-4/5">
             <div className="text-white font-bold text-6xl">Okeke Divine</div>
             <div className="text-white font-semibold text-2xl pt-5">
@@ -94,7 +94,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 max-h-full md:max-h-100vh overflow-auto md:overflow-visible">
           <div className="md:w-[90%]">
             {/* <Resume /> */}
             {/* <Projects repos={repose}/> */}
