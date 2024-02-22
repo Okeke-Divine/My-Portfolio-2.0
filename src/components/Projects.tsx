@@ -1,6 +1,16 @@
 import ProjectCard from "./ProjectCard.tsx";
 
-export default function Projects(props) {
+interface Project {
+  id: number;
+  name: string;
+  description: string;
+}
+
+interface ProjectsProps {
+  projects: Project[];
+}
+
+export default function Projects(props: ProjectsProps) {
   const repos = props.repos;
 
   return (

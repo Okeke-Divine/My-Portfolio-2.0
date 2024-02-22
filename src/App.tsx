@@ -24,7 +24,7 @@ function App() {
     setIsSidebarOpen(false);
   }, [location.pathname]);
 
-  const handleSetActiveLink = (link) => {
+  const handleSetActiveLink = (link: string) => {
     setActiveLink(link);
   };
 
