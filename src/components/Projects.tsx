@@ -1,9 +1,19 @@
 import ProjectCard from "./ProjectCard.tsx";
 
+interface Repo {
+  id: number;
+  name: string;
+  language: string;
+  pushed_at: string;
+  created_at: string;
+  html_url: string; 
+}
+
 interface Project {
   id: number;
   name: string;
   description: string;
+  repos: Repo[];
 }
 
 interface ProjectsProps {

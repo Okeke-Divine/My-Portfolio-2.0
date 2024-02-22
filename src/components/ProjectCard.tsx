@@ -3,6 +3,7 @@ interface ProjectCardProps {
   lastUpdated: string;
   createdAt: string;
   link: string;
+  lank: string
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -38,4 +39,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   );
 };
 
-export default ResumeCard;
+export default ProjectCard;

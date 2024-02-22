@@ -6,6 +6,24 @@ import "./index.css";
 import Projects from "./components/Projects.tsx";
 import Resume from "./components/Resume.tsx";
 
+interface ProjectsProps {
+  repos: RepoType[]; // Define RepoType as needed
+  // other props...
+}
+
+// 3. Adding lang to ProjectCardProps interface
+interface ProjectCardProps {
+  repoName: string;
+  lastUpdated: string;
+  createdAt: string;
+  link: string;
+  lang: string; // Add lang if it's used
+}
+
+interface ProjectsProps {
+  repos: RepoType[]; // Define RepoType as needed
+}
+
 function App() {
   const [repos, setRepos] = useState([]);
   const [activeLink, setActiveLink] = useState("projects");

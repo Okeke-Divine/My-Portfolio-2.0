@@ -29,6 +29,10 @@ export default function Resume() {
       name: "React",
     },
     {
+      icon: <i className="fa fa-file-code"></i>,
+      name: "Typescript",
+    },
+    {
       icon: <i className="fab fa-php"></i>,
       name: "PHP",
     },
