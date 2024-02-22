@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ubuntu, sans-serif */
+
+:root {
+  --bg-col: #151515;
+  --text-white: #ffffff;
+  --text-light: #949495;
+}
+
+html,
+body {
+  background: #151515;
+}
+
+.my-text-grey-1 {
+  color: rgb(137,148,149);
+}
+
+.my-bg-grey-1{
+  background: rgb(52,52,55);
+}
+
+.line-height-2 {
+  line-height: 2;
+}
+
+.nav-link-active {
+  color: white;
+}
+
+.nav-link-active > div > div {
+  width: 4rem;
+}
+
+.projectCard {
+  background: #202022;
+}
