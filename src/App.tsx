@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
 
 import "./index.css";
-import GithubIcon from "./components/GithubIcon.tsx";
-import LinkedinIcon from "./components/LinkedinIcon.tsx";
-import EmailIcon from "./components/EmailIcon.tsx";
 import Projects from "./components/Projects.tsx";
 import Resume from "./components/Resume.tsx";
 
@@ -52,20 +49,26 @@ function App() {
               game development.
             </div>
             <div className="pt-10">
-              <div className="nav-link-active flex group items-center text-gray-400 hover:text-white gap-3 w-fit justify-items-center cursor-pointer text-xs tracking-[.2em]">
-                <div>00</div>
-                <div>
-                  <div className="bg-white w-6 h-[1px] group-hover:w-16 duration-300"></div>
+              <BrowserRouter>
+              <Link to="/">
+                <div className="nav-link-active flex group items-center text-gray-400 hover:text-white gap-3 w-fit justify-items-center cursor-pointer text-xs tracking-[.2em]">
+                  <div>00</div>
+                  <div>
+                    <div className="bg-white w-6 h-[1px] group-hover:w-16 duration-300"></div>
+                  </div>
+                  <div className="uppercase">Projects</div>
                 </div>
-                <div className="uppercase">Projects</div>
-              </div>
-              <div className="flex group pt-10 items-center text-gray-400 hover:text-white gap-3 w-fit justify-items-center cursor-pointer text-xs tracking-[.2em]">
-                <div>01</div>
-                <div>
-                  <div className="bg-white w-6 h-[1px] group-hover:w-16 duration-300"></div>
+              </Link>
+              <Link to="/resume">
+                <div className="flex group pt-10 items-center text-gray-400 hover:text-white gap-3 w-fit justify-items-center cursor-pointer text-xs tracking-[.2em]">
+                  <div>01</div>
+                  <div>
+                    <div className="bg-white w-6 h-[1px] group-hover:w-16 duration-300"></div>
+                  </div>
+                  <div className="uppercase">Resume</div>
                 </div>
-                <div className="uppercase">Resume</div>
-              </div>
+              </Link>
+              </BrowserRouter>  
             </div>
             <div className="pt-[6.8rem]">
               <div className="flex flex-wrap gap-3">
@@ -97,10 +100,7 @@ function App() {
             {/* <Projects repos={repose}/> */}
             <BrowserRouter>
               <Routes>
-                <Route
-                  path="/"
-                  element={<Projects repos={repos} />}
-                />
+                <Route path="/" element={<Projects repos={repos} />} />
                 <Route path="/resume" element={<Resume />} />
               </Routes>
             </BrowserRouter>
@@ -112,3 +112,4 @@ function App() {
 }
 
 export default App;
+
