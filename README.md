@@ -1,2 +1,1 @@
-<!-- rm -rf node_modules
-npm install -->
+Second version of my portfolio.

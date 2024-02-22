@@ -18,7 +18,7 @@ const ResumeCard = ({
             </div>
             <div className="flex gap-2 items-center text-gray-300">
               <div>
-                <i class="fa-solid fa-code-branch text-[0.7rem] text-gray-400"></i>
+                <i className="fa-solid fa-code-branch text-[0.7rem] text-gray-400"></i>
               </div>
               <div>Github</div>
             </div>

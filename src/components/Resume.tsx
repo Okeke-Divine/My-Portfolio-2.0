@@ -106,7 +106,7 @@ export default function Resume() {
                 <div className="flex flex-wrap gap-x-5 gap-y-3 pr-2 my-text-grey-1">
                   {/* tech stack */}
                   {tech_stack.map((tech, index) => (
-                    <div className="flex gap-x-3 gap-y-1 text-md">
+                    <div key={index} className="flex gap-x-3 gap-y-1 text-md">
                       <div>{tech.icon}</div>
                       <div>{tech.name}</div>
                     </div>

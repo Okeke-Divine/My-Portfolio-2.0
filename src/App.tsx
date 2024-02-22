@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
 import "./index.css";
@@ -93,16 +93,17 @@ function App() {
         </div>
         <div className="w-1/2">
           <div className="w-[90%]">
-          <Router>
-      <Switch>
-        <Route path="/resume">
-          <Resume />
-        </Route>
-        <Route path="/">
-          <Projects />
-        </Route>
-      </Switch>
-    </Router>
+            {/* <Resume /> */}
+            {/* <Projects repos={repose}/> */}
+            <BrowserRouter>
+              <Routes>
+                <Route
+                  path="/"
+                  element={<Projects repos={repos} />}
+                />
+                <Route path="/resume" element={<Resume />} />
+              </Routes>
+            </BrowserRouter>
           </div>
         </div>
       </div>

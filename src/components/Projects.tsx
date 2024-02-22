@@ -8,7 +8,7 @@ export default function Projects(props) {
       <div className="flex items-center justify-between text-white">
         <div className="flex gap-x-2 items-center">
           <div>
-            <i class="fa-solid fa-code text-gray-400"></i>
+            <i className="fa-solid fa-code text-gray-400"></i>
           </div>
           <div className="font-bold text-xl">Github</div>
         </div>
@@ -17,7 +17,7 @@ export default function Projects(props) {
             Live Projects
           </div>
           <div>
-          <i class="fa-solid fa-arrow-right text-gray-400"></i>
+          <i className="fa-solid fa-arrow-right text-gray-400"></i>
           </div>
         </div>
       </div>
