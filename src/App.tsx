@@ -31,9 +31,9 @@ function App() {
 
   return (
     <div>
-      <div className="flex flex-wrap wd-100 p-[100px]">
-        <div className="w-1/2 sticky top-0">
-          <div className="w-4/5">
+      <div className="flex flex-wrap w-full p-6 md:p-[100px]">
+        <div className="w-full md:w-1/2 sticky md:top-0">
+          <div className="md:w-4/5">
             <div className="text-white font-bold text-6xl">Okeke Divine</div>
             <div className="text-white font-semibold text-2xl pt-5">
               Full Stack Web Developer
@@ -94,8 +94,8 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="w-1/2">
-          <div className="w-[90%]">
+        <div className="w-full md:w-1/2">
+          <div className="md:w-[90%]">
             {/* <Resume /> */}
             {/* <Projects repos={repose}/> */}
             <BrowserRouter>
