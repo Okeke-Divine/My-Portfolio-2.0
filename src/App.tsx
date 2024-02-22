@@ -67,7 +67,7 @@ function App() {
           <div className="w-full md:w-1/2 md:block  pb-10 md:pb-0">
             <div className="md:w-4/5">
               <div className="flex justify-between items-center">
-                <div className="text-white font-bold text-6xl">
+                <div className="text-white font-bold text-6xl my-ubuntu-font">
                   Okeke Divine
                 </div>
                 <div className="md:hidden block text-gray-400 text-2xl">
@@ -140,7 +140,7 @@ function App() {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <div className="md:w-[90%]">
+            <div className="">
               {/* <Resume /> */}
               {/* <Projects repos={repose}/> */}
               <Routes>
@@ -150,7 +150,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className={`sidebar ${isSidebarOpen ? "open" : ""}  p-10`}>
+        <div className={`sidebar ${isSidebarOpen ? "open" : ""} fixed p-10`}>
           <div className="flex flex-wrap justify-between mb-10 items-center">
             <div className="font-bold text-2xl">Okeke Divine</div>
             <div className="cursor-pointer" onClick={toggleSidebar}>
@@ -163,7 +163,7 @@ function App() {
               <div
                 className={`${
                   activeLink === "projects" ? "nav-link-active2" : ""
-                } flex gap-2 text-[1.1rem] mb-5 text-gray-400`}
+                } flex gap-2 text-[1.1rem] mb-5 text-gray-400 tracking-[0.2em]`}
               >
                 <div>00</div>
                 <div className="uppercase">Project</div>
@@ -173,7 +173,7 @@ function App() {
               <div
                 className={`${
                   activeLink === "resume" ? "nav-link-active2" : ""
-                } flex gap-2 text-[1.1rem] text-gray-400`}
+                } flex gap-2 text-[1.1rem] text-gray-400 tracking-[0.2em]`}
               >
                 <div>01</div>
                 <div className="uppercase">Resume</div>

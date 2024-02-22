@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /* Ubuntu, sans-serif */
+*:not(i), .my-ubuntu-font {
+  font-family: 'Ubuntu', sans-serif!important;
+}
 
 :root {
   --bg-col: #151515;
@@ -44,16 +47,15 @@ body {
 }
 
 .sidebar {
-  position: fixed;
   top: 0;
-  left: -300px; /* Initially hide the sidebar */
+  left: -300px;
   width: 300px;
   height: 100%;
   background-color: #202022;
   color: white;
-  transition: left 0.3s ease; /* Add smooth transition */
+  transition: left 0.3s ease;
 }
 
 .sidebar.open {
-  left: 0; /* Slide in the sidebar when it's open */
+  left: 0;
 }
