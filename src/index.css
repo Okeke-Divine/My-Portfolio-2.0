@@ -38,3 +38,18 @@ body {
 .projectCard {
   background: #202022;
 }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Initially hide the sidebar */
+  width: 300px;
+  height: 100%;
+  background-color: #202022;
+  color: white;
+  transition: left 0.3s ease; /* Add smooth transition */
+}
+
+.sidebar.open {
+  left: 0; /* Slide in the sidebar when it's open */
+}

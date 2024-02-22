@@ -9,6 +9,11 @@ import Resume from "./components/Resume.tsx";
 function App() {
   const [repos, setRepos] = useState([]);
   const [activeLink, setActiveLink] = useState("projects");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   useEffect(() => {
     if (location.pathname === "/resume") {
@@ -16,6 +21,7 @@ function App() {
     } else {
       setActiveLink("projects");
     }
+    setIsSidebarOpen(false);
   }, [location.pathname]);
 
   const handleSetActiveLink = (link) => {
@@ -43,16 +49,11 @@ function App() {
 
   useEffect(() => {
     const fetchRepos = async () => {
-      // setIsLoading(true);
-      // setError(null);
-
       try {
         const response = await axios.get(api);
         setRepos(response.data);
       } catch (error) {
-        // setError(error);
       } finally {
-        // setIsLoading(false);
       }
     };
 
@@ -70,7 +71,7 @@ function App() {
                   Okeke Divine
                 </div>
                 <div className="md:hidden block text-gray-400 text-2xl">
-                  <div className="cursor-pointer">
+                  <div className="cursor-pointer" onClick={toggleSidebar}>
                     <i className="fa-solid fa-bars-staggered"></i>
                   </div>
                 </div>
@@ -147,6 +148,29 @@ function App() {
                 <Route path="/resume" element={<Resume />} />
               </Routes>
             </div>
+          </div>
+        </div>
+        <div className={`sidebar ${isSidebarOpen ? "open" : ""}  p-10`}>
+          <div className="flex flex-wrap justify-between mb-10 items-center">
+            <div className="font-bold text-2xl">Okeke Divine</div>
+            <div className="cursor-pointer" onClick={toggleSidebar}>
+              <i className="fa-solid fa-times text-xl text-gray-400"></i>
+            </div>
+          </div>
+
+          <div>
+            <Link to="/" onClick={() => handleSetActiveLink("projects")}>
+              <div className="flex gap-2 text-[1.1rem] mb-5">
+                <div>00</div>
+                <div className="uppercase">Project</div>
+              </div>
+            </Link>
+            <Link to="/resume" onClick={() => handleSetActiveLink("resume")}>
+              <div className="flex gap-2 text-[1.1rem]">
+                <div>01</div>
+                <div className="uppercase">Resume</div>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
