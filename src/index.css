@@ -39,6 +39,10 @@ body {
   background: #202022;
 }
 
+.nav-link-active2{
+  color:white;
+}
+
 .sidebar {
   position: fixed;
   top: 0;

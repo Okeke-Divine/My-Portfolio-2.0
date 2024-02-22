@@ -160,13 +160,21 @@ function App() {
 
           <div>
             <Link to="/" onClick={() => handleSetActiveLink("projects")}>
-              <div className="flex gap-2 text-[1.1rem] mb-5">
+              <div
+                className={`${
+                  activeLink === "projects" ? "nav-link-active2" : ""
+                } flex gap-2 text-[1.1rem] mb-5 text-gray-400`}
+              >
                 <div>00</div>
                 <div className="uppercase">Project</div>
               </div>
             </Link>
             <Link to="/resume" onClick={() => handleSetActiveLink("resume")}>
-              <div className="flex gap-2 text-[1.1rem]">
+              <div
+                className={`${
+                  activeLink === "resume" ? "nav-link-active2" : ""
+                } flex gap-2 text-[1.1rem] text-gray-400`}
+              >
                 <div>01</div>
                 <div className="uppercase">Resume</div>
               </div>
