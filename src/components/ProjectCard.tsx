@@ -3,7 +3,7 @@ interface ProjectCardProps {
   lastUpdated: string;
   createdAt: string;
   link: string;
-  lank: string
+  lang: string
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({

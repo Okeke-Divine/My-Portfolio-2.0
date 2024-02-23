@@ -6,23 +6,6 @@ import "./index.css";
 import Projects from "./components/Projects.tsx";
 import Resume from "./components/Resume.tsx";
 
-interface ProjectsProps {
-  repos: RepoType[]; // Define RepoType as needed
-  // other props...
-}
-
-// 3. Adding lang to ProjectCardProps interface
-interface ProjectCardProps {
-  repoName: string;
-  lastUpdated: string;
-  createdAt: string;
-  link: string;
-  lang: string; // Add lang if it's used
-}
-
-interface ProjectsProps {
-  repos: RepoType[]; // Define RepoType as needed
-}
 
 function App() {
   const [repos, setRepos] = useState([]);
@@ -102,10 +85,7 @@ function App() {
                 stack web developer. I love{" "}
                 <span className="text-white">problem solving</span> and critical
                 thinking, I live for the challenge, I use coding as a tool to{" "}
-                <span className="text-white">solve problems</span>. I am
-                currently interested in{" "}
-                <span className="text-white">building interactive</span> UI's
-                for game development.
+                <span className="text-white">solve problems</span>.
               </div>
               <div className="pt-10 hidden md:block">
                 <Link to="/" onClick={() => handleSetActiveLink("projects")}>
