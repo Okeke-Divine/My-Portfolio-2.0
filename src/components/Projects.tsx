@@ -25,11 +25,13 @@ export default function Projects(props: ProjectsProps) {
   const repos = props.repos;
   const [loadingComponent, setLoadingComponent] = useState("Loading...");
   const [totalRepos, setTotalRepos] = useState("-");
+  const [firstTimeLoading,setFirstTimeLoading] = useState(true);
   useEffect(
     function () {
       if (repos.length > 0) {
         setLoadingComponent("");
         setTotalRepos(repos.length);
+        setFirstTimeLoading(false);
       }
     },
     [repos]
