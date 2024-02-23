@@ -11,9 +11,9 @@ interface Repo {
 }
 
 interface Project {
-  id: number;
-  name: string;
-  description: string;
+  firstTimeLoading: boolean;
+  loadingComponent: string;
+  totalRepos: string;
   repos: Repo[];
 }
 
@@ -23,21 +23,24 @@ interface ProjectsProps {
 
 export default function Projects(props: ProjectsProps) {
   const repos = props.repos;
-  const [loadingComponent, setLoadingComponent] = useState("Loading...");
-  const [totalRepos, setTotalRepos] = useState("-");
-  const [firstTimeLoading, setFirstTimeLoading] = useState(true);
-  useEffect(
-    function () {
-      if (firstTimeLoading == true) {
-        if (repos.length > 0) {
-          setLoadingComponent("");
-          setTotalRepos(repos.length);
-          setFirstTimeLoading(false);
-        }
-      }
-    },
-    [repos]
-  );
+  const totalRepos = props.totalRepos;
+  const loadingComponent = props.loadingComponent;
+  // const firstTimeLoading = props.firstTimeLoading;
+  // const [loadingComponent, setLoadingComponent] = useState("Loading...");
+  // const [totalRepos, setTotalRepos] = useState("-");
+
+  // useEffect(
+  //   function () {
+  //     if (firstTimeLoading == true) {
+  //       if (repos.length > 0) {
+  //         setLoadingComponent("");
+  //         setTotalRepos(repos.length);
+  //       }
+  //     }
+  //   },
+  //   [repos]
+  // );
+
 
   return (
     <div>

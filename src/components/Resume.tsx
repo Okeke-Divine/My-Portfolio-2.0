@@ -42,7 +42,7 @@ export default function Resume() {
     },
     {
       icon: <i className="fab fa-golang"></i>,
-      name: "Golang (Gin) (Basics)",
+      name: "Golang (Gin) {Basics}",
     },
     {
       icon: <i className="fab fa-js"></i>,
@@ -96,9 +96,9 @@ export default function Resume() {
               <p className="my-text-grey-1  mb-2">
                 Hello my name is Okeke Divine, I'm a full stack web developer,
                 interested in having my lines of code in a popular opensource
-                repo. I love startups, game development and basically everything
+                repo. I love startups, Ai, robotics and basically everything
                 tech. That said, I want to launch a startup that actually solves
-                problems, at the same time build my own game. Everything I do is
+                problems. Everything I do is
                 a step to my goal
               </p>
             </div>

@@ -6,11 +6,25 @@ import "./index.css";
 import Projects from "./components/Projects.tsx";
 import Resume from "./components/Resume.tsx";
 
-
 function App() {
   const [repos, setRepos] = useState([]);
   const [activeLink, setActiveLink] = useState("projects");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [firstTimeLoading, setFirstTimeLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadingComponent, setLoadingComponent] = useState("Loading...");
+  const [totalRepos, setTotalRepos] = useState("-");
+
+  useEffect(
+    function () {
+      if (isLoading == false) {
+        setFirstTimeLoading(false);
+        setLoadingComponent("");
+        setTotalRepos(repos.length);
+      }
+    },
+    [isLoading]
+  );
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -50,11 +64,13 @@ function App() {
 
   useEffect(() => {
     const fetchRepos = async () => {
+      setIsLoading(true);
       try {
         const response = await axios.get(api);
         setRepos(response.data);
       } catch (error) {
       } finally {
+        setIsLoading(false);
       }
     };
 
@@ -151,10 +167,17 @@ function App() {
           </div>
           <div className="w-full md:w-1/2">
             <div className="">
-              {/* <Resume /> */}
-              {/* <Projects repos={repose}/> */}
               <Routes>
-                <Route path="/" element={<Projects repos={repos} />} />
+                <Route
+                  path="/"
+                  element={
+                    <Projects
+                      repos={repos}
+                      totalRepos={totalRepos}
+                      loadingComponent={loadingComponent}
+                    />
+                  }
+                />
                 <Route path="/resume" element={<Resume />} />
               </Routes>
             </div>
