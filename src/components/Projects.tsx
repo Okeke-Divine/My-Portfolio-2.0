@@ -27,9 +27,9 @@ export default function Projects(props: ProjectsProps) {
   const [totalRepos, setTotalRepos] = useState("-");
   useEffect(
     function () {
-      setTotalRepos(repos.length);
       if (repos.length > 0) {
         setLoadingComponent("");
+        setTotalRepos(repos.length);
       }
     },
     [repos]
@@ -54,7 +54,7 @@ export default function Projects(props: ProjectsProps) {
         </div>
       </div>
       <div className="mt-5">
-        {loadingComponent}
+        <span className="text-white">{loadingComponent}</span>
         {repos.map((repo) => (
           <ProjectCard
             key={repo.id}
