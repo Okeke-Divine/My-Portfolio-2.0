@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard.tsx";
 
@@ -23,10 +24,12 @@ interface ProjectsProps {
 
 export default function Projects(props: ProjectsProps) {
   const repos = props.repos;
+  const [loadingComponent,setLoadingComponent] = useState("Loading...");
   const [totalRepos, setTotalRepos] = useState("-");
   useEffect(
     function () {
       setTotalRepos(repos.length);
+      setLoadingComponent("");
     },
     [repos]
   );
@@ -38,7 +41,7 @@ export default function Projects(props: ProjectsProps) {
           <div>
             <i className="fa-solid fa-code text-gray-400"></i>
           </div>
-          <div className="font-bold text-xl">Github {totalRepos}</div>
+          <div className="font-bold text-xl">Github ({totalRepos})</div>
         </div>
         <div className="group flex gap-x-2 items-center cursor-pointer">
           <div className="opacity-0 duration-[1200ms] group-hover:opacity-100 pr-1 group-hover:pr-4">
@@ -50,6 +53,7 @@ export default function Projects(props: ProjectsProps) {
         </div>
       </div>
       <div className="mt-5">
+        {loadingComponent}
         {repos.map((repo) => (
           <ProjectCard
             key={repo.id}
