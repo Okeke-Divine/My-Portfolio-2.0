@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard.tsx";
 
@@ -24,12 +23,14 @@ interface ProjectsProps {
 
 export default function Projects(props: ProjectsProps) {
   const repos = props.repos;
-  const [loadingComponent,setLoadingComponent] = useState("Loading...");
+  const [loadingComponent, setLoadingComponent] = useState("Loading...");
   const [totalRepos, setTotalRepos] = useState("-");
   useEffect(
     function () {
       setTotalRepos(repos.length);
-      setLoadingComponent("");
+      if (repos.length > 0) {
+        setLoadingComponent("");
+      }
     },
     [repos]
   );
