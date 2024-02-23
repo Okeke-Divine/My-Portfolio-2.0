@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard.tsx";
 
 interface Repo {
@@ -6,7 +7,7 @@ interface Repo {
   language: string;
   pushed_at: string;
   created_at: string;
-  html_url: string; 
+  html_url: string;
 }
 
 interface Project {
@@ -22,6 +23,13 @@ interface ProjectsProps {
 
 export default function Projects(props: ProjectsProps) {
   const repos = props.repos;
+  const [totalRepos, setTotalRepos] = useState("-");
+  useEffect(
+    function () {
+      setTotalRepos(repos.length);
+    },
+    [repos]
+  );
 
   return (
     <div>
@@ -30,14 +38,14 @@ export default function Projects(props: ProjectsProps) {
           <div>
             <i className="fa-solid fa-code text-gray-400"></i>
           </div>
-          <div className="font-bold text-xl">Github</div>
+          <div className="font-bold text-xl">Github {totalRepos}</div>
         </div>
         <div className="group flex gap-x-2 items-center cursor-pointer">
           <div className="opacity-0 duration-[1200ms] group-hover:opacity-100 pr-1 group-hover:pr-4">
             Live Projects
           </div>
           <div>
-          <i className="fa-solid fa-arrow-right text-gray-400"></i>
+            <i className="fa-solid fa-arrow-right text-gray-400"></i>
           </div>
         </div>
       </div>
@@ -54,7 +62,14 @@ export default function Projects(props: ProjectsProps) {
         ))}
       </div>
       <div className="text-center text-gray-300">
-        Inspired by <a className="text-white" target="_blank" href="https://www.kingslee.me/">kingslee</a>
+        Inspired by{" "}
+        <a
+          className="text-white"
+          target="_blank"
+          href="https://www.kingslee.me/"
+        >
+          kingslee
+        </a>
       </div>
     </div>
   );
