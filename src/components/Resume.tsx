@@ -3,25 +3,10 @@
 export default function Resume() {
   const experiences = [
     {
-      company: "Swizel",
-      role: "Contract Based Frontend Developer",
-      date: "November 2021 - June 2022",
-    },
-    {
-      company: "IgrowAfrika",
-      role: "Frontend Web Developer",
-      date: "April 2022 - Present",
-    },
-    {
-      company: "DumbMeta",
-      role: "Project Lead, Writer, Web Developer",
-      date: "November 2021 - March 2022",
-    },
-    {
-      company: "Iceztech",
-      role: "Intern, Educator, Frontend Lead",
-      date: "February 2021 - January 2022",
-    },
+      company: "Marokug",
+      role: "Senior Full Stack Web Dev",
+      date: "January 2024 - Present",
+    }
   ];
   const tech_stack = [
     {
