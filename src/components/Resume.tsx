@@ -6,7 +6,12 @@ export default function Resume() {
       company: "Marokug",
       role: "Senior Full Stack Web Dev",
       date: "January 2024 - Present",
-    }
+    },
+    {
+      company: "Jujora",
+      role: "Frontend Web Dev",
+      date: "March 2024 - Present",
+    },
   ];
   const tech_stack = [
     {
@@ -15,7 +20,23 @@ export default function Resume() {
     },
     {
       icon: <i className="fa fa-file-code"></i>,
+      name: "Next.js",
+    },
+    {
+      icon: <i className="fa fa-file-code"></i>,
       name: "Typescript",
+    },
+    {
+      icon: <i className="fa fa-code"></i>,
+      name: "Tailwind CSS",
+    },
+    {
+      icon: <i className="fab fa-bootstrap"></i>,
+      name: "Bootstrap",
+    },
+    {
+      icon: <i className="fab fa-js"></i>,
+      name: "jQuery (Basics)",
     },
     {
       icon: <i className="fab fa-php"></i>,
@@ -27,31 +48,31 @@ export default function Resume() {
     },
     {
       icon: <i className="fab fa-golang"></i>,
-      name: "Golang (Gin) {Basics}",
-    },
-    {
-      icon: <i className="fab fa-js"></i>,
-      name: "JavaScript (ES6+)",
-    },
-    {
-      icon: <i className="fab fa-html5"></i>,
-      name: "HTML",
-    },
-    {
-      icon: <i className="fab fa-css3-alt"></i>,
-      name: "CSS",
-    },
-    {
-      icon: <i className="fab fa-bootstrap"></i>,
-      name: "Bootstrap",
+      name: "Golang (Gin) (Basics)",
     },
     {
       icon: <i className="fas fa-database"></i>,
       name: "MySQL",
     },
     {
-      icon: <i className="fab fa-js"></i>,
-      name: "jQuery",
+      icon: <i className="fab fa-git"></i>,
+      name: "Git",
+    },
+    {
+      icon: <i className="fab fa-github"></i>,
+      name: "Github",
+    },
+    {
+      icon: <i className="fab fa-docker"></i>,
+      name: "Docker (Basics)",
+    },
+    {
+      icon: <i className="fas fa-robot"></i>,
+      name: "Puppeteer",
+    },
+    {
+      icon: <i className="fas fa-clock"></i>,
+      name: "Node-Cron",
     },
   ];
 
@@ -64,13 +85,16 @@ export default function Resume() {
           </div>
           <div className="font-bold text-xl">My Resume</div>
         </div>
-        <a target="_blank" href="https://okekedivine.vercel.app/Okeke_Divine_Resume.pdf">
-        <div className="text-gray-300 hover:text-white flex gap-x-2 items-center cursor-pointer">
-          <div className="pr-1">View</div>
-          <div>
-            <i className="fa-solid fa-file-lines"></i>
+        <a
+          target="_blank"
+          href="https://okekedivine.vercel.app/Okeke_Divine_Resume.pdf"
+        >
+          <div className="text-gray-300 hover:text-white flex gap-x-2 items-center cursor-pointer">
+            <div className="pr-1">View</div>
+            <div>
+              <i className="fa-solid fa-file-lines"></i>
+            </div>
           </div>
-        </div>
         </a>
       </div>
       <div>
@@ -79,12 +103,12 @@ export default function Resume() {
             <div>
               <h2 className="text-2xl text-white font-bold mb-5">About Me</h2>
               <p className="my-text-grey-1  mb-2">
-                Hello my name is Okeke Divine, I'm a full stack web developer,
-                interested in having my lines of code in a popular opensource
-                repo. I love startups, Ai, robotics and basically everything
-                tech. That said, I want to launch a startup that actually solves
-                problems. Everything I do is
-                a step to my goal
+                Hello my name is Okeke Divine, I'm a full stack web developer
+                with 7 years + of experience, interested in having my lines of
+                code in a popular opensource repo. I love startups, Ai, robotics
+                and basically everything tech. That said, I want to launch a
+                startup that actually solves problems. Everything I do is a step
+                to my goal.
               </p>
             </div>
           </div>

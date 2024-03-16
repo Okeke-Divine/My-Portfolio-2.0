@@ -98,7 +98,7 @@ function App() {
               </div>
               <div className="pt-10 text-gray-400 line-height-2 text-[1rem]">
                 Hello, I'm <span className="text-white">Divine</span>, a full
-                stack web developer. I love{" "}
+                stack web developer  with 7+ years of hands-on experience designing, developing, and implementing applications and solutions using a range of technologies and programming languages.. I love{" "}
                 <span className="text-white">problem solving</span> and critical
                 thinking, I live for the challenge, I use coding as a tool to{" "}
                 <span className="text-white">solve problems</span>.
