@@ -19,6 +19,11 @@ function App() {
   const [loadingComponent, setLoadingComponent] = useState("Loading...");
   const [totalRepos, setTotalRepos] = useState("-");
 
+  useEffect(() => {
+    const currentPath = window.location.pathname.slice(1); // remove the leading '/'
+    setActiveLink(currentPath);
+  }, []);
+
   useEffect(
     function () {
       if (isLoading == false) {
@@ -270,7 +275,6 @@ function App() {
           </div>
         </div>
       </div>
-
 
       {/* time machine image */}
       {/* <img
