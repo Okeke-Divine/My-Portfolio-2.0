@@ -1,0 +1,27 @@
+[
+    {
+        "company": "Marokug",
+        "date": "January 2024 - Present",
+        "role": "Senior Full Stack Engineer",
+        "livePreview": "https://marokug.vercel.app/",
+        "task": [
+            "Spearheaded the development of Marokug, an educational platform empowering students to learn courses, participate in quizzes and exams, and explore various learning materials. Utilized a modern tech stack including React, Tailwind CSS, Django, and MySQL to deliver a user-friendly and scalable web application.",
+            "Architected and implemented robust back-end systems for various projects, leveraging Django's robust framework and MySQL's efficient database management capabilities. Ensured data integrity, security, and scalability to meet the evolving needs of the applications.",
+            "Collaborated effectively with cross-functional teams, including designers and front-end developers, to translate design mockups into functional and responsive user interfaces using React and Tailwind CSS. Delivered pixel-perfect experiences that exceeded user expectations.",
+            "Played a key role in troubleshooting and resolving complex technical issues, ensuring the smooth operation and performance of multiple web applications. Maintained a deep understanding of various technologies to identify and rectify issues efficiently."
+        ],
+        "summary": "Architected and implemented robust back-end systems for various projects, leveraging Django's robust framework and MySQL's efficient database management capabilities. Ensured data integrity, security, and scalability to meet the evolving needs of the applications.",
+        "technology": ["React","Django","Tailwind Css","Javascript","HTML","CSS"]
+    },
+    {
+        "company": "Jujora",
+        "date": "March 2024 - Present",
+        "role": "Frontend Web Dev",
+        "livePreview": null,
+        "task": [
+            "Collaborated effectively with cross-functional teams, including designers and front-end developers, to translate design mockups into functional and responsive user interfaces using React (Next.js) and Tailwind CSS."
+        ],
+        "summary": "Collaborated effectively with cross-functional teams, including designers and front-end developers, to translate design mockups into functional and responsive user interfaces using React (Next.js) and Tailwind CSS.",
+        "technology": ["React","Next.js","Tailwind Css","Javascript","HTML","CSS"]
+    }
+]

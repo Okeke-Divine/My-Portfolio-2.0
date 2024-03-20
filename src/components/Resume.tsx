@@ -1,18 +1,6 @@
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Resume() {
-  const experiences = [
-    {
-      company: "Marokug",
-      role: "Senior Full Stack Web Dev",
-      date: "January 2024 - Present",
-    },
-    {
-      company: "Jujora",
-      role: "Frontend Web Dev",
-      date: "March 2024 - Present",
-    },
-  ];
+export default function Resume({ experiences, socialMedia }) {
   const tech_stack = [
     {
       icon: <i className="fab fa-react"></i>,
@@ -75,6 +63,14 @@ export default function Resume() {
       name: "Node-Cron",
     },
   ];
+  const education = [
+    {
+      inst: "Nnamdi Azikiwe University",
+      course: "Computer Science",
+      level: "B. Sc",
+      year: "2022 - Present",
+    },
+  ];
 
   return (
     <div>
@@ -99,20 +95,41 @@ export default function Resume() {
       </div>
       <div>
         <div className="mt-5">
-          <div className="mb-3 pt-10 pb-10 pl-10 pr-10 projectCard group-hover:scale-[1.1] group-hover:drop-shadow-2xl transition duration-200">
+          <div className="mb-3 pt-10 pb-10 pl-10 pr-10 projectCard group-hover:scale-[1.1] group-hover:drop-shadow-2xl transition duration-200 shadow-md">
             <div>
               <h2 className="text-2xl text-white font-bold mb-5">About Me</h2>
-              <p className="my-text-grey-1  mb-2">
-                Hello my name is Okeke Divine, I'm a full stack web developer
-                with 7 years + of experience, interested in having my lines of
-                code in a popular opensource repo. I love startups, Ai, robotics
-                and basically everything tech. That said, I want to launch a
-                startup that actually solves problems. Everything I do is a step
-                to my goal.
-              </p>
+              <div className="sectionContentList text-gray-400">
+                Hello there, I'm Divine. My fascination with web development
+                sparked 7 years ago, and it's been a thrilling journey ever
+                since. Embarking on my coding journey through the customization
+                of tailored templates on CodePen, I unearthed a natural affinity
+                for delving into the intricate details of HTML & CSS.
+              </div>
+
+              <div className="sectionContentList text-gray-400 mt-2">
+                My professional tenure has primarily been at Marokug, where I
+                honed my skills and contributed extensively to various projects.
+                During my time there, I delved into diverse projects, pushing
+                boundaries and mastering new technologies.
+              </div>
+
+              <div className="sectionContentList text-gray-400 mt-2">
+                My{" "}
+                <a
+                  href={socialMedia.mySocials.github}
+                  target="_blank"
+                  className="text-primary"
+                >
+                  Github
+                </a>{" "}
+                profile showcases a range of projects, each highlighting my
+                dedication to crafting robust and innovative solutions. From web
+                applications to repositories, I take pride in every line of code
+                I've written.
+              </div>
             </div>
           </div>
-          <div className="mb-3 pt-10 pb-10 pl-10 prx-10 projectCard group-hover:scale-[1.1] group-hover:drop-shadow-2xl transition duration-200">
+          <div className="mb-3 pt-10 pb-10 pl-10 prx-10 projectCard group-hover:scale-[1.1] group-hover:drop-shadow-2xl transition duration-200 shadow-md">
             <div>
               <h2 className="text-2xl text-white font-bold mb-5">Tech Stack</h2>
               <div>
@@ -128,7 +145,8 @@ export default function Resume() {
               </div>
             </div>
           </div>
-          <div className="mb-3 pt-10 pb-10 pl-10 pr-10 projectCard group-hover:scale-[1.1] group-hover:drop-shadow-2xl transition duration-200">
+          {/* past experience */}
+          <div className="mb-3 pt-10 pb-10 pl-10 pr-10 projectCard group-hover:scale-[1.1] group-hover:drop-shadow-2xl transition duration-200 shadow-md">
             <div>
               <h2 className="text-2xl text-white font-bold mb-10">
                 Past Experience
@@ -144,13 +162,29 @@ export default function Resume() {
                       {experience.role.split(",").map((role, index) => (
                         <div
                           key={index}
-                          className="mb-1 my-bg-grey-1 w-fit rounded-xl pt-[0.05rem] pb-[0.05rem] pl-3 pr-3"
+                          className="mb-1 my-bg-blue-1 w-fit rounded-xl pt-[0.05rem] pb-[0.05rem] pl-3 pr-3"
                         >
                           {role.trim()}
                         </div>
                       ))}
                     </div>
                     <div>{experience.date}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/* education */}
+          <div className="mb-3 pt-10 pb-10 pl-10 pr-10 projectCard group-hover:scale-[1.1] group-hover:drop-shadow-2xl transition duration-200 shadow-md">
+            <div>
+              <h2 className="text-2xl text-white font-bold mb-5">Education</h2>
+              <div>
+                {/* education loop */}
+                {education.map((education,index) => (
+                  <div key={index} className="text-white">
+                    <div className="font-bold mb-2">{education.inst}</div>
+                    <div className="mb-2 text-gray-400">{education.level} {education.course}</div>
+                    <div className="text-gray-400">{education.year}</div>
                   </div>
                 ))}
               </div>

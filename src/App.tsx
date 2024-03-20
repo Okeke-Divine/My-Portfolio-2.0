@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
+import experiences from "./data/experiences.json";
+import socialMedia from "./data/socialMedia.json";
 
 import "./index.css";
+import TimeMachineGif from "./assets/rotate.gif";
 import Projects from "./components/Projects.tsx";
 import Resume from "./components/Resume.tsx";
+import Experience from "./components/experience.tsx";
 
 function App() {
   const [repos, setRepos] = useState([]);
@@ -41,6 +45,7 @@ function App() {
 
   const handleSetActiveLink = (link: string) => {
     setActiveLink(link);
+    setIsSidebarOpen(false);
   };
 
   const api = "https://api.github.com/users/okeke-divine/repos?sort=pushed";
@@ -51,9 +56,9 @@ function App() {
       icon: <i className="fab fa-github"></i>,
     },
     {
-      name: "Linkedin",
-      link: "https://www.linkedin.com/in/okeke-divine-vessel/",
-      icon: <i className="fab fa-linkedin"></i>,
+      name: "Twitter",
+      link: "https://twitter.com/okekedivine__",
+      icon: <i className="fab fa-twitter"></i>,
     },
     {
       name: "Email",
@@ -98,17 +103,22 @@ function App() {
               </div>
               <div className="pt-10 text-gray-400 line-height-2 text-[1rem]">
                 Hello, I'm <span className="text-white">Divine</span>, a full
-                stack web developer  with 7+ years of hands-on experience designing, developing, and implementing applications and solutions using a range of technologies and programming languages.. I love{" "}
+                stack web developer with 7+ years of hands-on experience
+                designing, developing, and implementing applications and
+                solutions using a range of technologies and programming
+                languages.. I love{" "}
                 <span className="text-white">problem solving</span> and critical
                 thinking, I live for the challenge, I use coding as a tool to{" "}
                 <span className="text-white">solve problems</span>.
               </div>
-              <div className="pt-10 hidden md:block">
+              <br />
+              <br />
+              <div className="">
                 <Link to="/" onClick={() => handleSetActiveLink("projects")}>
                   <div
                     className={`${
                       activeLink === "projects" ? "nav-link-active" : ""
-                    } flex group items-center text-gray-400 hover:text-white gap-3 w-fit justify-items-center cursor-pointer text-xs tracking-[.2em]`}
+                    } flex group items-center text-gray-400 hover:text-white gap-3 w-fit justify-items-center cursor-pointer text-xs tracking-[.2em] mb-5`}
                   >
                     <div>00</div>
                     <div>
@@ -118,15 +128,31 @@ function App() {
                   </div>
                 </Link>
                 <Link
+                  to="/experience"
+                  onClick={() => handleSetActiveLink("experience")}
+                >
+                  <div
+                    className={`${
+                      activeLink === "experience" ? "nav-link-active" : ""
+                    } flex group items-center text-gray-400 hover:text-white gap-3 w-fit justify-items-center cursor-pointer text-xs tracking-[.2em] mb-5`}
+                  >
+                    <div>01</div>
+                    <div>
+                      <div className="bg-white w-6 h-[1px] group-hover:w-16 duration-300"></div>
+                    </div>
+                    <div className="uppercase">Experience</div>
+                  </div>
+                </Link>
+                <Link
                   to="/resume"
                   onClick={() => handleSetActiveLink("resume")}
                 >
                   <div
                     className={`${
                       activeLink === "resume" ? "nav-link-active" : ""
-                    } flex group pt-10 items-center text-gray-400 hover:text-white gap-3 w-fit justify-items-center cursor-pointer text-xs tracking-[.2em]`}
+                    } flex group items-center text-gray-400 hover:text-white gap-3 w-fit justify-items-center cursor-pointer text-xs tracking-[.2em]`}
                   >
-                    <div>01</div>
+                    <div>02</div>
                     <div>
                       <div className="bg-white w-6 h-[1px] group-hover:w-16 duration-300"></div>
                     </div>
@@ -134,7 +160,7 @@ function App() {
                   </div>
                 </Link>
               </div>
-              <div className="pt-3 md:pt-[6.8rem]">
+              <div className="pt-10 md:pt-[6.8rem]">
                 <div className="flex flex-wrap gap-3">
                   {socials.map((social, index) => (
                     <a
@@ -143,9 +169,9 @@ function App() {
                       href={social.link}
                       className="cursor-pointer"
                     >
-                      <div className="text-white flex gap-2 items-center">
+                      <div className="text-white flex gap-2 text-xl items-center">
                         <span>{social.icon}</span>
-                        {social.name}
+                        {/* {social.name} */}
                       </div>
                     </a>
                   ))}
@@ -178,12 +204,28 @@ function App() {
                     />
                   }
                 />
-                <Route path="/resume" element={<Resume />} />
+                <Route
+                  path="/resume"
+                  element={
+                    <Resume
+                      experiences={experiences}
+                      socialMedia={socialMedia}
+                    />
+                  }
+                />
+                <Route
+                  path="/experience"
+                  element={<Experience experiences={experiences} />}
+                />
               </Routes>
             </div>
           </div>
         </div>
-        <div className={`sidebar ${isSidebarOpen ? "open" : ""} fixed p-10`}>
+        <div
+          className={`sidebar ${
+            isSidebarOpen ? "open" : ""
+          } fixed p-10 shadow-2xl`}
+        >
           <div className="flex flex-wrap justify-between mb-10 items-center">
             <div className="font-bold text-2xl">Okeke Divine</div>
             <div className="cursor-pointer" onClick={toggleSidebar}>
@@ -202,19 +244,41 @@ function App() {
                 <div className="uppercase">Project</div>
               </div>
             </Link>
+            <Link
+              to="/resume"
+              onClick={() => handleSetActiveLink("experience")}
+            >
+              <div
+                className={`${
+                  activeLink === "experience" ? "nav-link-active2" : ""
+                } flex gap-2 text-[1.1rem] text-gray-400 tracking-[0.2em] mb-5`}
+              >
+                <div>01</div>
+                <div className="uppercase">Experience</div>
+              </div>
+            </Link>
             <Link to="/resume" onClick={() => handleSetActiveLink("resume")}>
               <div
                 className={`${
                   activeLink === "resume" ? "nav-link-active2" : ""
                 } flex gap-2 text-[1.1rem] text-gray-400 tracking-[0.2em]`}
               >
-                <div>01</div>
+                <div>02</div>
                 <div className="uppercase">Resume</div>
               </div>
             </Link>
           </div>
         </div>
       </div>
+
+
+      {/* time machine image */}
+      {/* <img
+        src={TimeMachineGif}
+        className="cursor-pointer fixed bottom-5 right-0"
+        width={100}
+        height={100}
+      /> */}
     </BrowserRouter>
   );
 }
